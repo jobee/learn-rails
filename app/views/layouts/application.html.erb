@@ -1,22 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Learn Rails" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%# Modernizr is required for Zurb Foundation %>
-    <%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
+    
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+    
+    <!-- Content -->
+
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+
+      <div class="row">
+
+    
+        <div class="large-12 columns">
+ 
+          <%= yield(:slider) %>
+
+          <div class="row content">
+            <div class="large-12 columns">
+
+              <%= render 'layouts/messages' %>
+
+               <div class="row">
+                 <div class="large-4 columns">
+                    <%= yield(:sidebar) %>
+                 </div>
+                 <div class="large-8 columns">
+                    <%= yield %>
+                 </div>
+               </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </main>
+
+    <!-- End Content -->
+ 
+ 
+    <!-- Footer -->
+ 
+    <footer>
+      <div class="row">
+        <%= render 'layouts/footer' %>
+      </div>
+    </footer>
+ 
+    <!-- End Footer -->
+
+    <%= javascript_include_tag "application" %>
+
   </body>
 </html>

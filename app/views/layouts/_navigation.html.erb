@@ -1,12 +1,29 @@
-<%# navigation styled for Zurb Foundation 4 %>
-<nav class="top-bar">
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Home', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul>
-      <%= render 'layouts/navigation_links' %>
+<%# navigation styled for Zurb Foundation 5 %>
+<div class="fixed">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      	<h1><%= link_to 'Home', root_path %></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  </div>
-</nav>
+    <section class="top-bar-section">
+      
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><%= link_to 'About', page_path('about') %></li>
+        <li class="divider"></li>
+    	  <li><%= link_to 'Contact', new_contact_path %></li>
+    	  <li class="has-form">
+      		<a href="#" class="button">Login</a>
+    	  </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+
+      </ul>
+
+    </section>
+  </nav>
+</div>

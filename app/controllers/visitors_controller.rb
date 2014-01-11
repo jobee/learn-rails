@@ -9,7 +9,7 @@ class VisitorsController < ApplicationController
 		if @visitor.valid?
 			@visitor.subscribe
 			flash[:notice] = "Signed up #{@visitor.email}." 
-			redirect_to root_path
+			redirect_to page_path('thanks')
 		else
 			render :new
 		end 

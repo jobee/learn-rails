@@ -19,7 +19,7 @@ gem 'gibbon'
 gem 'google_drive'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'zurb-foundation', '~> 4.3.2' 
+gem 'foundation-rails'
 
 group :development do
 	gem 'better_errors' 

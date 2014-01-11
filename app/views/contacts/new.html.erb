@@ -1,4 +1,23 @@
 <% content_for :title do %>Contact<% end %>
+
+<% content_for :sidebar do %>
+	<h3 class="subheader">Adresse</h3>
+	<p>
+		<strong>Company</strong></br>
+		Firstname Lastname<br>
+		Street No.<br>
+		ZIP Hometown
+	</p>
+	<p>
+		<strong>Tel:</strong> 0123 4567890<br>
+		<strong>Email:</strong> <%= ENV["OWNER_EMAIL"] %>
+	</p>
+	<p>
+		Feel free to contact us!
+	</p>
+
+<% end %>
+
 <h3>Contact</h3>
 <div class="form">
 	<%= simple_form_for @contact do |form| %> 
