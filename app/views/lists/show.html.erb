@@ -1,19 +1,42 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>Listing Products<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @list.name %>
-</p>
+<% content_for :sidebar do %>
+  
+  <div class="panel">
+  	<p>
+	  <strong>Name:</strong>
+	  <%= @list.name %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @list.description %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @list.description %>
+	</p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @list.date %>
-</p>
+	<p>
+	  <strong>Date:</strong>
+	  <%= @list.date.to_formatted_s(:long) %>
+	</p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+	<%= link_to edit_list_path(@list) do %><i class="fi-pencil size-18"></i> Edit<% end %>
+	
+  </div>
+
+  <%= link_to 'Back', lists_path, :class => 'button small secondary' %>
+  
+  <br>
+
+  <a href="#" data-reveal-id="shortcuts-modal">View Shortcuts</a>
+
+  <div id="shortcuts-modal" class="reveal-modal large" data-reveal>
+	  <h2>Use the Shortcuts</h2>
+	  <p class="lead">Fast list editing...</p>
+	  <p><kbd>Cmd</kbd> + <kbd>A</kbd> : Add new Product</p>
+	  <p><kbd>Cmd</kbd> + <kbd>D</kbd> : Delete latest Product</p>
+	  <p><kbd>Cmd</kbd> + <kbd>E</kbd> : Edit List Settings</p>
+	  <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+<% end %>
+
+

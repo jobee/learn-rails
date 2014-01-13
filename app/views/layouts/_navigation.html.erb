@@ -1,5 +1,5 @@
 <%# navigation styled for Zurb Foundation 5 %>
-<div class="fixed">
+<div class="contain-to-grid fixed">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
@@ -11,10 +11,11 @@
       
       <!-- Right Nav Section -->
       <ul class="right">
+        <li><a href="#">Recipes</a></li>
         <li class="divider"></li>
     	  <li><%= link_to 'Products', products_path %></li>
         <li class="divider"></li>
-        <li><%= link_to 'Lists', lists_path %></li>
+        <li><%= link_to 'Shopping Lists', lists_path %></li>
     	  <li class="has-form">
       		<a href="#" class="button">Login</a>
     	  </li>
