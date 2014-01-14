@@ -1,0 +1,17 @@
+<li class="control-group nested-fields">
+  <div class="controls">
+    <%= f.label :amount, "Amount:" %>
+    <%= f.text_field :amount %>
+
+    <%= f.label :unit, "Unit:" %>
+    <%= f.text_field :unit %>
+
+    
+    <%= f.label :product, "Product:" %>
+    <%= f.fields_for :product do |list_item_product| %>
+      <%= list_item_product.text_field :name %>
+    <% end %>
+ 
+    <%= link_to_remove_association "remove", f %>
+  </div>
+</li>

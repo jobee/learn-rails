@@ -20,6 +20,10 @@ gem 'google_drive'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'foundation-rails'
+gem 'cocoon'
+
+# Please use new recommended protection model for params(strong_parameters) or add `protected_attributes`
+gem 'protected_attributes'
 
 group :development do
 	gem 'better_errors' 
