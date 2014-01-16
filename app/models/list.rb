@@ -1,11 +1,7 @@
 class List < ActiveRecord::Base
-	#attr_accessor :name
-	validates_presence_of :name
-
-	attr_accessible :name, 
-                  	:description,
-                  	:list_items_attributes
  
+ 	validates :name, presence: true
+
 	has_many :list_items
 	has_many :products, 
 	       	 :through => :list_items
@@ -14,4 +10,5 @@ class List < ActiveRecord::Base
 	       						  :reject_if => :all_blank, 
 	       						  :allow_destroy => true
 	accepts_nested_attributes_for :products
+
 end

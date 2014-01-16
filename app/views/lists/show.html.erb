@@ -41,12 +41,26 @@
 
   
 <%= form_for @list, :html => { :class => 'form-horizontal' } do |f| %>
-  <fieldset id="list-products"> 
-    <ol> 
-      <%= f.fields_for :list_items do |list_item| %> 
-        <%= render 'list_item_fields', f: list_item %> 
+
+  <h3>Items</h3>
+  <div id="list-products" class="row collapse">
+  	<div class="large-12 columns">
+    <ol class="custom-list-class">
+      <%= f.fields_for :list_items do |list_item| %>
+      	<div class="row collapse">
+      		<div class="large-12 columns">
+        		<%= render 'list_item_fields', f: list_item %>
+        	</div>
+        <div>
       <% end %> 
-    </ol> 
-    <%= link_to_add_association 'add product', f, :list_items, 'data-association-insertion-node' => "#list-products ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|list_item| list_item.build_product; list_item } %> 
-  </fieldset> 
+    </ol>
+    </div>
+    
+    <%= link_to_add_association 'add product', f, :list_items, 'data-association-insertion-node' => "#list-products ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|list_item| list_item.build_product; list_item }, :class => "button secondary" %> 
+    <%= f.button :submit %>
+    
+  </div>
+  
+  
+
 <% end %>

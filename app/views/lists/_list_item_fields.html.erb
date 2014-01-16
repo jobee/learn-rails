@@ -1,17 +1,27 @@
-<li class="control-group nested-fields">
-  <div class="controls">
-    <%= f.label :amount, "Amount:" %>
-    <%= f.text_field :amount %>
+<li class="control-group nested-fields custom-list-class">
+  
+  <div class="row collapse">
 
-    <%= f.label :unit, "Unit:" %>
-    <%= f.text_field :unit %>
-
-    
-    <%= f.label :product, "Product:" %>
-    <%= f.fields_for :product do |list_item_product| %>
-      <%= list_item_product.text_field :name %>
-    <% end %>
- 
-    <%= link_to_remove_association "remove", f %>
+    <div class="large-1 columns">
+      <%= f.text_field :amount, placeholder: 'Amount' %>
+    </div>
+    <div class="large-2 columns">
+      <%= f.text_field :unit, placeholder: 'Unit' %>
+    </div>
+    <div class="large-4 columns">
+      <%= f.fields_for :product do |list_item_product| %>
+        <%= list_item_product.text_field :name, placeholder: 'Productname' %>
+      <% end %>
+    </div>
+    <div class="large-3 columns">
+      <%= f.text_field :store, placeholder: 'Store' %>
+    </div>
+    <div class="large-1 columns">
+      <%= f.check_box :complete, as: :boolean %>
+    </div>
+    <div class="large-1 columns">
+      <%= link_to_remove_association "X", f, :class => "button alert tiny" %> 
+    </div>
   </div>
+
 </li>
