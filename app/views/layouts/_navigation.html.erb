@@ -16,9 +16,20 @@
     	  <li><%= link_to 'Products', products_path %></li>
         <li class="divider"></li>
         <li><%= link_to 'Shopping Lists', lists_path %></li>
-    	  <li class="has-form">
-      		<a href="#" class="button">Login</a>
-    	  </li>
+    	  <li class="divider"></li>
+        <% if current_user %>
+          <li class="has-dropdown">
+            <a href="#">Signed in as <strong><%= current_user.name %></strong></a>
+            <ul class="dropdown">
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="has-form">
+            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", :class => "button" %>
+          </li>
+        <% end %>
+    	  
       </ul>
 
       <!-- Left Nav Section -->

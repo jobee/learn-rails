@@ -22,6 +22,10 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'cocoon'
 
+gem 'omniauth-oauth2', git: 'https://github.com/intridea/omniauth-oauth2.git' 
+gem 'omniauth-facebook' #, git:'https://github.com/mkdynamic/omniauth-facebook.git'
+
+
 # Please use new recommended protection model for params(strong_parameters) or add `protected_attributes`
 # gem 'protected_attributes'
 
